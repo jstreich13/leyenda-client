@@ -4,11 +4,15 @@
 
 body {
   margin: 0;
+  // font-family: "Encode Sans Expanded", sans-serif;
+  // font-weight: 200;
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+  //   "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -46,13 +50,13 @@ code {
 }
 
 .note.new {
-  background-color: #67d7cc;
+  background-color: beige;
 }
 
 textarea {
   border: none;
   resize: none;
-  background-color: #67d7cc;
+  background-color: beige;
 }
 
 textarea:focus {
@@ -73,11 +77,15 @@ textarea:focus {
 }
 
 .note {
-  background-color: #fef68a;
-  border-radius: 10px;
+  background-color: lightskyblue;
+  border: solid 1px skyblue;
+  box-shadow: black;
+  box-shadow: solid 2px black;
+  border-radius: 2rem;
   padding: 1rem;
   min-height: 170px;
   display: flex;
+  margin-bottom: 1rem;
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
