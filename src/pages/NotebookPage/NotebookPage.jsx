@@ -3,6 +3,8 @@ import { Component } from "react";
 import { MdSearch, MdDeleteForever } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const NotebookPage = ({
   handleAddNote,
@@ -99,7 +101,11 @@ const NotebookPage = ({
         </button>
       </div>
       <div className="search">
-        <MdSearch className="search-icons" size="1.3em" />
+        <FontAwesomeIcon
+          icon={faSearch}
+          className="search-icons"
+          size="1.3em"
+        />
         <input
           onChange={(event) => handleSearchNote(event.target.value)}
           type="text"
@@ -114,7 +120,8 @@ const NotebookPage = ({
               <span>{note.text}</span>
               <div className="note-footer">
                 <small> {note.date} </small>
-                <MdDeleteForever
+                <FontAwesomeIcon
+                  icon={faTrash}
                   onClick={() => handleDeleteNote(note.id)}
                   className="delete-icon"
                   size="1.3em"
