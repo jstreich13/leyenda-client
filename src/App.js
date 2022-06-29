@@ -1,4 +1,3 @@
-// import { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login/Login";
@@ -24,7 +23,7 @@ const App = () => {
             <Signup />
           </Route>
 
-          <Routegit
+          <Route
             path="/notebook"
             exact
             render={(routerProps) => (
