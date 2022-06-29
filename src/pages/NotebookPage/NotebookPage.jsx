@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 
 const NotebookPage = ({
   handleAddNote,
-  handleSearchNote,
   handleToggleDarkMode,
   id,
   text,
@@ -37,6 +36,11 @@ const NotebookPage = ({
   // };
 
   const [searchText, setSearchText] = useState("");
+
+  const handleSearchNote = (searchItem) => {
+    // notes.filter((note) => note.text.toLowerCase().includes(searchText));
+    setSearchText(searchItem);
+  };
 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
@@ -74,7 +78,7 @@ const NotebookPage = ({
       };
       console.log("text");
       setNotes([...notes, newNote]);
-      // setNoteText("");
+      setNoteText("");
     }
     //create function so if noteText.trim().length == 0 then add bookmark of timestamp
   };
@@ -103,19 +107,21 @@ const NotebookPage = ({
         />
       </div>
       <div className="notebook">
-        {notes?.map((note) => (
-          <div className="note">
-            <span>{note.text}</span>
-            <div className="note-footer">
-              <small> {note.date} </small>
-              <MdDeleteForever
-                onClick={() => handleDeleteNote(note.id)}
-                className="delete-icon"
-                size="1.3em"
-              />
+        {notes
+          ?.filter((note) => note.text.toLowerCase().includes(searchText))
+          .map((note) => (
+            <div className="note">
+              <span>{note.text}</span>
+              <div className="note-footer">
+                <small> {note.date} </small>
+                <MdDeleteForever
+                  onClick={() => handleDeleteNote(note.id)}
+                  className="delete-icon"
+                  size="1.3em"
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         <div className="note new">
           <textarea
             rows="8"
