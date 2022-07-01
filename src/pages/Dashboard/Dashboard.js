@@ -2,6 +2,15 @@ import "./Dashboard.scss";
 import { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBookOpenReader,
+  faBook,
+  faHandsPraying,
+  faBrain,
+} from "@fortawesome/free-solid-svg-icons";
+import DreamCatcher from "../../components/DreamCatcher/DreamCatcher";
+import DreamCatcherIcon from "../../visual assets/dreamcatcher-icon.png";
 
 class Dashboard extends Component {
   state = {
@@ -48,12 +57,23 @@ class Dashboard extends Component {
     if (this.state.failedAuth) {
       return (
         <main className="dashboard">
-          <p className="main-header">Leyenda</p>
-          <div className="sub-header">
-            <p className="sub-header__byline"> Knowledge </p>
-            <p className="sub-header__byline"> Story </p>
+          <div className="dashboard-header">
+            <DreamCatcher className="DreamCatcher" />
+            <p className="main-header">Leyenda</p>
+            <div className="sub-header">
+              <p className="sub-header__byline"> Story </p>
+              <Link className="continue-container" to="/login">
+                <div className="sub-header-button">
+                  <FontAwesomeIcon
+                    className="continue-icon"
+                    icon={faBookOpenReader}
+                  />
+                  <p className="continue-text">Onward</p>
+                </div>
+              </Link>
+              <p className="sub-header__byline"> Knowledge </p>
+            </div>
           </div>
-          <Link to="/login">Continue</Link>
         </main>
       );
     }
@@ -66,22 +86,35 @@ class Dashboard extends Component {
       );
     }
 
-    const { first_name, last_name, email, phone, address } = this.state.user;
+    const { first_name, last_name, email } = this.state.user;
 
     return (
       <main className="dashboard">
-        <h1 className="dashboard__title">Dashboard</h1>
-        <p>
-          Welcome back, {first_name} {last_name}! 👋
-        </p>
-        <h2>My Profile</h2>
-        <p>Email: {email}</p>
-        <p>Phone: {phone}</p>
-        <p>Address: {address}</p>
-
-        <button className="dashboard__logout" onClick={this.handleLogout}>
-          Log out
-        </button>
+        <div className="dashboard__wrapper">
+          <h1 className="dashboard__title">Dashboard</h1>
+          <p className="dashboard__body">
+            Welcome back to your Library, {first_name} {last_name}! 👋
+          </p>
+          <img className="icon" src={DreamCatcherIcon} />
+          <div className="dashboard__profile">
+            <h2>My Profile</h2>
+          </div>
+          <div className="dashboard__profile-items">
+            <FontAwesomeIcon className="font-icons" icon={faBook} />
+            <p className="dashboard__body">My Books</p>
+          </div>
+          <div className="dashboard__profile-items">
+            <FontAwesomeIcon className="font-icons" icon={faBrain} />
+            <p className="dashboard__body">My Notebooks</p>
+          </div>
+          <div className="dashboard__profile-items">
+            <FontAwesomeIcon className="font-icons" icon={faHandsPraying} />
+            <p className="dashboard__body">My Queue</p>
+          </div>
+          <button className="dashboard__logout" onClick={this.handleLogout}>
+            Sign out
+          </button>
+        </div>
       </main>
     );
   }

@@ -3,6 +3,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Input from "../../components/Input/Input";
+import DreamcatcherIcon from "../../../src/visual assets/dreamcatcher-icon.png";
 
 class Signup extends Component {
   state = {
@@ -19,8 +20,6 @@ class Signup extends Component {
         password: event.target.password.value,
         first_name: event.target.first_name.value,
         last_name: event.target.last_name.value,
-        phone: event.target.phone.value,
-        address: event.target.address.value,
       })
       .then(() => {
         this.setState({ success: true, error: "" });
@@ -36,11 +35,13 @@ class Signup extends Component {
       <main className="signup-page">
         <form className="signup" onSubmit={this.handleSubmit}>
           <h1 className="signup__title">Sign up</h1>
-
+          <img
+            className="icon"
+            src={DreamcatcherIcon}
+            alt="dreamcatcher icon"
+          />
           <Input type="text" name="first_name" label="First name" />
           <Input type="text" name="last_name" label="Last name" />
-          <Input type="text" name="phone" label="Phone" />
-          <Input type="text" name="address" label="Address" />
           <Input type="text" name="email" label="Email" />
           <Input type="password" name="password" label="Password" />
 
@@ -53,8 +54,11 @@ class Signup extends Component {
             <div className="signup__message">{this.state.error}</div>
           )}
         </form>
-        <p>
-          Have an account? <Link to="/login">Log in</Link>
+        <p className="log-in-text">
+          Already have an account?{" "}
+          <Link className="log-in-text" to="/login">
+            Log in
+          </Link>
         </p>
       </main>
     );

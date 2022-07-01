@@ -24,13 +24,18 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: black;
 }
 
 .dark-mode {
   background-color: black;
 }
 
-.dark-mode h1 {
+.header-title {
+  color: black;
+}
+
+.dark-mode .header-title {
   color: white;
 }
 

@@ -1,15 +1,339 @@
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/variables";
+
 .dashboard {
-    background-color: #f5f5f5;
-    padding: 1rem;
-    min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  min-height: 100vh;
 
-    &__title {
-        margin: 0 0 1rem;
-        padding: 0 0 0.5rem;
-        border-bottom: 5px solid #ccc;
-    }
+  &__title {
+    margin: 0 0 1rem;
+    padding: 0 0 0.5rem;
+    border-bottom: 5px solid #ccc;
+  }
 
-    &__logout {
-        margin-top: 2rem;
+  &__logout {
+    margin-top: 2rem;
+  }
+}
+
+.DreamCatcher {
+  visibility: visible;
+}
+
+main {
+  background: linear-gradient(
+    -45deg,
+    #e4efe9 0%,
+    #93a5cf 6%,
+    #80d0c7 12%,
+    #13547a 18%,
+    #3f51b1 24%,
+    #5a55ae 30%,
+    #7b5fac 36%,
+    #8f6aae 42%,
+    #a86aa4 48%,
+    #cc6b8e 54%,
+    #f18271 60%,
+    #f3a469 66%,
+    #f7c978 72%,
+    #dfa579 78%,
+    #c79081 85%,
+    #434343 92%,
+    #000000 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+// h1 {
+//   color: white;
+//   font-family: Open Sans, sans-serif;
+//   font-weight: 300;
+//   font-size: 5rem;
+//   letter-spacing: 3rem;
+// }
+
+.dashboard {
+}
+
+.dashboard-header {
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    mix-blend-mode: hard-light;
+    margin-left: 26rem;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    mix-blend-mode: hard-light;
+    margin-left: 26rem;
+  }
+}
+.main-header {
+  @include desktop {
+    font-family: "The Nautigal", cursive;
+    font-size: 18rem;
+    font-weight: 400;
+    color: white;
+    justify-content: center;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 3.25rem;
+  }
+  @include tablet {
+    font-family: "The Nautigal", cursive;
+    font-size: 18rem;
+    font-weight: 400;
+    color: white;
+    justify-content: center;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 3.25rem;
+  }
+}
+
+.sub-header {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    place-content: space-evenly;
+    align-items: center;
+    min-width: 10rem;
+    width: 48rem;
+    margin-left: 6rem;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    place-content: space-evenly;
+    align-items: center;
+    min-width: 10rem;
+    width: 48rem;
+    margin-left: 5rem;
+  }
+}
+.sub-header__byline {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: "Encode Sans Expanded";
+    font-weight: 800;
+    font-size: 2rem;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: "Encode Sans Expanded";
+    font-weight: 800;
+    font-size: 2rem;
+  }
+}
+.continue-icon {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75rem;
+    color: white;
+    justify-content: center;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75rem;
+    color: white;
+    justify-content: center;
+  }
+}
+
+.continue-container {
+  @include desktop {
+    text-decoration: none;
+    color: white;
+    font-family: The Nautigal;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-right: 2rem;
+  }
+
+  @include tablet {
+    text-decoration: none;
+    color: white;
+    font-family: The Nautigal;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-right: 2rem;
+  }
+}
+
+.continue-text {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    align-items: center;
+    align-content: revert;
+    /* margin-right: 0.7rem; */
+    font-family: Encode Sans Expanded;
+  }
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25em;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    align-items: center;
+    align-content: revert;
+    /* margin-right: 0.7rem; */
+    font-family: Encode Sans Expanded;
+  }
+}
+
+.sub-header-button {
+  @include desktop {
+    border-radius: 55%;
+    /* height: 7rem; */
+    width: 9rem;
+    animation-timing-function: ease-in;
+    animation-duration: 5000;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      -45deg,
+      #e4efe9 0%,
+      #93a5cf 6%,
+      #80d0c7 12%,
+      #13547a 18%,
+      #3f51b1 24%,
+      #5a55ae 30%,
+      #7b5fac 36%,
+      #8f6aae 42%,
+      #a86aa4 48%,
+      #cc6b8e 54%,
+      #f18271 60%,
+      #f3a469 66%,
+      #f7c978 72%,
+      #dfa579 78%,
+      #c79081 85%,
+      #434343 92%,
+      #000000 100%
+    );
+    background-size: 400% 400%;
+    animation: button-gradient 20s ease infinite;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes button-gradient {
+    0% {
+      background-position: 0%;
     }
+    50% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+}
+
+.dashboard {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 22rem;
+    box-shadow: 0 2px 16px rgb(0 0 0 / 10%);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1rem;
+    mix-blend-mode: luminosity;
+  }
+
+  &__title {
+    mix-blend-mode: n;
+  }
+
+  &__body {
+    mix-blend-mode: normal;
+  }
+  &__profile {
+    mix-blend-mode: normal;
+  }
+
+  &__profile-items {
+    mix-blend-mode: normal;
+  }
+
+  &__logout {
+  }
+}
+
+.icon {
+  height: 30%;
+  width: 30%;
+  align-self: center;
+  mix-blend-mode: luminosity;
+}
+
+.login-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.font-icons {
+  mix-blend-mode: luminosity;
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faSearch } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const NotebookPage = ({
   handleAddNote,
@@ -72,13 +73,19 @@ const NotebookPage = ({
   const handleSaveClick = () => {
     if (noteText.trim().length > 0) {
       const newNote = {
-        id: uuidv4(),
         text: noteText,
         date: new Date().toLocaleDateString(),
       };
       console.log("text");
       setNotes([...notes, newNote]);
       setNoteText("");
+
+      axios
+        .post(`http://localhost:8080/save`, newNote)
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e) => console.log(e));
     }
     //create function so if noteText.trim().length == 0 then add bookmark of timestamp
   };
@@ -88,7 +95,7 @@ const NotebookPage = ({
   return (
     <>
       <div className="header">
-        <h1>Notebook</h1>
+        <h1 className="header-title">Notebook</h1>
         <button
           onClick={() =>
             handleToggleDarkMode((previousDarkMode) => !previousDarkMode)
@@ -99,11 +106,7 @@ const NotebookPage = ({
         </button>
       </div>
       <div className="search">
-        <FontAwesomeIcon
-          icon={faSearch}
-          className="search-icons"
-          size="1.3em"
-        />
+        <FontAwesomeIcon icon={faSearch} className="search-icons" />
         <input
           onChange={(event) => handleSearchNote(event.target.value)}
           type="text"
@@ -114,7 +117,7 @@ const NotebookPage = ({
         {notes
           ?.filter((note) => note.text.toLowerCase().includes(searchText))
           .map((note) => (
-            <div className="note">
+            <div key={note.id} className="note">
               <span>{note.text}</span>
               <div className="note-footer">
                 <small> {note.date} </small>
@@ -122,7 +125,6 @@ const NotebookPage = ({
                   icon={faTrash}
                   onClick={() => handleDeleteNote(note.id)}
                   className="delete-icon"
-                  size="1.3em"
                 />
               </div>
             </div>
