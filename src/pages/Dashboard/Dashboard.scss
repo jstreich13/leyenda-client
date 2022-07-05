@@ -11,6 +11,8 @@
     margin: 0 0 1rem;
     padding: 0 0 0.5rem;
     border-bottom: 5px solid #ccc;
+    color: black;
+    font-family: "Poppins";
   }
 
   &__logout {
@@ -44,7 +46,7 @@ main {
     #000000 100%
   );
   background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
+  animation: gradient 30s ease infinite;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -136,7 +138,7 @@ main {
     display: flex;
     flex-direction: row;
     color: white;
-    font-family: "Encode Sans Expanded";
+    font-family: "Poppins";
     font-weight: 800;
     font-size: 2rem;
   }
@@ -144,7 +146,7 @@ main {
     display: flex;
     flex-direction: row;
     color: white;
-    font-family: "Encode Sans Expanded";
+    font-family: "Poppins";
     font-weight: 800;
     font-size: 2rem;
   }
@@ -204,7 +206,7 @@ main {
     align-items: center;
     align-content: revert;
     /* margin-right: 0.7rem; */
-    font-family: Encode Sans Expanded;
+    font-family: Poppins;
   }
   @include tablet {
     display: flex;
@@ -219,7 +221,7 @@ main {
     align-items: center;
     align-content: revert;
     /* margin-right: 0.7rem; */
-    font-family: Encode Sans Expanded;
+    font-family: Poppins;
   }
 }
 
@@ -299,21 +301,56 @@ main {
   }
 
   &__title {
-    mix-blend-mode: n;
+    mix-blend-mode: normal;
+    font-family: "Poppins";
   }
 
   &__body {
     mix-blend-mode: normal;
+    font-family: "Poppins";
+    color: #000000;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   &__profile {
     mix-blend-mode: normal;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins";
   }
 
   &__profile-items {
     mix-blend-mode: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  &__profile-items--wrapper {
+    border-bottom: 5px solid skyblue;
+    border-top: 5px solid skyblue;
+    margin-bottom: 5%;
   }
 
   &__logout {
+    margin-top: 1rem;
+    background-color: #1358db;
+    border: 1px solid #1358db;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-family: "Poppins";
+
+    &:hover {
+      background-color: #003fc2;
+    }
   }
 }
 
@@ -336,4 +373,19 @@ main {
 
 .font-icons {
   mix-blend-mode: luminosity;
+  color: black;
+}
+
+.Nav-links,
+a {
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: #003fc2;
+    cursor: pointer;
+  }
+}
+
+.spacing {
+  margin-left: -0.4rem;
 }

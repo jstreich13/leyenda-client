@@ -4,7 +4,7 @@ import { Component } from "react";
 class DreamCatcher extends Component {
   render() {
     return (
-      <section id="background">
+      <section className="dreamCatcher-container" id="background">
         <div id="container">
           <div id="dreamCatcher">
             <div id="circle1">

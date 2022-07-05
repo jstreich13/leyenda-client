@@ -4,6 +4,8 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import { useState } from "react";
 import NotebookPage from "./pages/NotebookPage/NotebookPage";
+import MyBooksPage from "./pages/MyBooks/MyBooksPage";
+import Reader from "./components/EReader/EReader";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,6 +23,12 @@ const App = () => {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/books">
+            <MyBooksPage />
+          </Route>
+          <Route path="/reader">
+            <Reader />
           </Route>
 
           <Route

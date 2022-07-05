@@ -1,16 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik:wght@300;400&display=swap");
 
-body {
-  background-color: #fff;
-  margin: 0px;
-  overflow: hidden;
-  font-family: arial;
-  color: #fff;
-}
-
-a {
-  color: #0078ff;
-}
+// body {
+//   background-color: #fff;
+//   margin: 0px;
+//   overflow: hidden;
+//   font-family: arial;
+//   color: #fff;
+// }
 
 #reader {
   width: 100%;
@@ -37,14 +33,7 @@ div.reader-content {
   padding-top: 30px;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-h1 {
+.reader-title {
   background: radial-gradient(
     circle,
     #f8f8ff 0%,
@@ -55,13 +44,13 @@ h1 {
     #100c07 90%,
     #c29b0c 100%
   );
-  font-size: 100px;
+  font-size: 2rem;
   -webkit-background-clip: text;
   color: transparent;
   background-size: 400%;
-  animation: gradient 10s linear infinite alternate;
-  font-family: Open Sans, sans-serif;
-  font-weight: 100;
+  animation: gradient 30s linear infinite alternate;
+  font-family: "Poppins";
+  font-weight: 600;
 }
 
 @keyframes gradient {

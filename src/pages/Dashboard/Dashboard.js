@@ -1,7 +1,7 @@
 import "./Dashboard.scss";
 import { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookOpenReader,
@@ -89,7 +89,7 @@ class Dashboard extends Component {
     const { first_name, last_name, email } = this.state.user;
 
     return (
-      <main className="dashboard">
+      <main className="dashboard-title">
         <div className="dashboard__wrapper">
           <h1 className="dashboard__title">Dashboard</h1>
           <p className="dashboard__body">
@@ -99,17 +99,21 @@ class Dashboard extends Component {
           <div className="dashboard__profile">
             <h2>My Profile</h2>
           </div>
-          <div className="dashboard__profile-items">
-            <FontAwesomeIcon className="font-icons" icon={faBook} />
-            <p className="dashboard__body">My Books</p>
-          </div>
-          <div className="dashboard__profile-items">
-            <FontAwesomeIcon className="font-icons" icon={faBrain} />
-            <p className="dashboard__body">My Notebooks</p>
-          </div>
-          <div className="dashboard__profile-items">
-            <FontAwesomeIcon className="font-icons" icon={faHandsPraying} />
-            <p className="dashboard__body">My Queue</p>
+          <div className="dashboard__profile-items--wrapper">
+            <Link className="Nav-links" to="/books">
+              <div className="dashboard__profile-items">
+                <FontAwesomeIcon className="font-icons" icon={faBook} />
+                <p className="dashboard__body">My Books</p>
+              </div>
+            </Link>
+            <div className="dashboard__profile-items spacing">
+              <FontAwesomeIcon className="font-icons" icon={faHandsPraying} />
+              <p className="dashboard__body">My Queue</p>
+            </div>
+            <div className="dashboard__profile-items">
+              <FontAwesomeIcon className="font-icons" icon={faBrain} />
+              <p className="dashboard__body">My Notebooks</p>
+            </div>
           </div>
           <button className="dashboard__logout" onClick={this.handleLogout}>
             Sign out
