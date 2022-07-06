@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
+import MarkdownIt from "markdown-it";
 
 class Reader extends Component {
   //   state = {
@@ -16,7 +17,35 @@ class Reader extends Component {
       <div className="reader-wrapper">
         <h1 className="reader-title"> The Great Gatsby </h1>
         <div className="reader-hamburger">
-          <div className="reader-content"></div>
+          <div className="reader-content">
+            <h2>The Great Gatsby</h2>
+            <h3>F Scott Fitzgerald</h3>
+            <p className="gatsbytext">
+              `In my younger and more vulnerable years my father gave me some
+              advice that I've been turning over in my mind ever since.
+              "Whenever you feel like criticizing any one," he told me, "just
+              remember that all the people in this world haven't had the
+              advantages that you've had." He didn't say any more but we've
+              always been unusually communicative in a reserved way, and I
+              understood that he meant a great deal more than that. In
+              consequence I'm inclined to reserve all judgments, a habit that
+              has opened up many curious natures to me and also made me the
+              victim of not a few veteran bores. The abnormal mind is quick to
+              detect and attach itself to this quality when it appears in a
+              normal person, and so it came about that in college I was unjustly
+              accused of being a politician, because I was privy to the secret
+              griefs of wild, unknown men. Most of the confidences were
+              unsought--frequently I have feigned sleep, preoccupation, or a
+              hostile levity when I realized by some unmistakable sign that an
+              intimate revelation was quivering on the horizon--for the intimate
+              revelations of young men or at least the terms in which they
+              express them are usually plagiaristic and marred by obvious
+              suppressions. Reserving judgments is a matter of infinite hope. I
+              am still a little afraid of missing something if I forget that, as
+              my father snobbishly suggested, and I snobbishly repeat, a sense
+              of the fundamental decencies is parcelled out unequally at birth.`
+            </p>
+          </div>
         </div>
         <div className="audio-player"></div>
         <div id="reader" class="gradient"></div>

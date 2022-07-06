@@ -4,8 +4,12 @@
 
 .dashboard {
   background-color: #f5f5f5;
-  padding: 1rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 
   &__title {
     margin: 0 0 1rem;
@@ -20,11 +24,16 @@
   }
 }
 
-.DreamCatcher {
+.Castle {
   visibility: visible;
+  display: flex;
+  flex-direction: row;
+
+  margin-right: 9vw;
 }
 
 main {
+  display: flex !important;
   background: linear-gradient(
     -45deg,
     #e4efe9 0%,
@@ -43,12 +52,12 @@ main {
     #dfa579 78%,
     #c79081 85%,
     #434343 92%,
-    #000000 100%
+    #000000 99%
   );
+
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
+  animation: gradient 20s ease infinite;
   height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -79,15 +88,16 @@ main {
 .dashboard-header {
   @include tablet {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     mix-blend-mode: hard-light;
-    margin-left: 26rem;
   }
   @include desktop {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     mix-blend-mode: hard-light;
-    margin-left: 26rem;
+  }
+  &__wrapper {
+    flex-direction: column;
   }
 }
 .main-header {
@@ -121,7 +131,6 @@ main {
     align-items: center;
     min-width: 10rem;
     width: 48rem;
-    margin-left: 6rem;
   }
   @include tablet {
     display: flex;
@@ -130,7 +139,7 @@ main {
     align-items: center;
     min-width: 10rem;
     width: 48rem;
-    margin-left: 5rem;
+    margin-left: 25rem;
   }
 }
 .sub-header__byline {
@@ -178,6 +187,7 @@ main {
     flex-direction: column;
     margin-left: 5rem;
     margin-right: 2rem;
+    background-color: transparent !important;
   }
 
   @include tablet {
@@ -319,6 +329,15 @@ main {
     font-family: "Poppins";
   }
 
+  &__profile-header {
+    mix-blend-mode: normal;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins";
+    color: black;
+    font-size: 1.25rem;
+  }
+
   &__profile-items {
     mix-blend-mode: normal;
     display: flex;
@@ -359,6 +378,7 @@ main {
   width: 30%;
   align-self: center;
   mix-blend-mode: luminosity;
+  margin-bottom: 2vh;
 }
 
 .login-page {
@@ -376,9 +396,15 @@ main {
   color: black;
 }
 
+.no-hover {
+  background-color: transparent !important;
+}
+
 .Nav-links,
 a {
   text-decoration: none !important;
+  flex-direction: row;
+  display: contents;
 
   &:hover {
     background-color: #003fc2;

@@ -8,11 +8,13 @@ const API_KEY = "BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w";
 
 export const current = [];
 
-export const twentyTen = [];
+export const series = [];
 
-export const twoThousand = [];
+// export const twentyTen = [];
 
-export const nineteenNinety = [];
+// export const twoThousand = [];
+
+// export const nineteenNinety = [];
 
 setTimeout(() => {
   axios
@@ -90,6 +92,7 @@ axios
   )
   .then((res) => {
     current.push(res.data);
+    series.push(res.data);
   });
 
 //business books

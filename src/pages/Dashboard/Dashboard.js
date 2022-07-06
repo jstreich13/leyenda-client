@@ -9,8 +9,9 @@ import {
   faHandsPraying,
   faBrain,
 } from "@fortawesome/free-solid-svg-icons";
-import DreamCatcher from "../../components/DreamCatcher/DreamCatcher";
-import DreamCatcherIcon from "../../visual assets/dreamcatcher-icon.png";
+// import DreamCatcher from "../../components/DreamCatcher/DreamCatcher";
+// import DreamCatcherIcon from "../../visual assets/dreamcatcher-icon.png";
+import Castle from "../../visual assets/cloud-castle-icon.png";
 
 class Dashboard extends Component {
   state = {
@@ -57,9 +58,11 @@ class Dashboard extends Component {
     if (this.state.failedAuth) {
       return (
         <main className="dashboard">
-          <div className="dashboard-header">
-            <DreamCatcher className="DreamCatcher" />
-            <p className="main-header">Leyenda</p>
+          <div className="dashboard-header__wrapper">
+            <div className="dashboard-header">
+              <img src={Castle} className="Castle" />
+              <p className="main-header">Leyenda</p>
+            </div>
             <div className="sub-header">
               <p className="sub-header__byline"> Story </p>
               <Link className="continue-container" to="/login">
@@ -95,9 +98,9 @@ class Dashboard extends Component {
           <p className="dashboard__body">
             Welcome back to your Library, {first_name} {last_name}! 👋
           </p>
-          <img className="icon" src={DreamCatcherIcon} />
+          <img className="icon" src={Castle} />
           <div className="dashboard__profile">
-            <h2>My Profile</h2>
+            <h2 className="dashboard__profile-header">My Profile</h2>
           </div>
           <div className="dashboard__profile-items--wrapper">
             <Link className="Nav-links" to="/books">
@@ -107,12 +110,16 @@ class Dashboard extends Component {
               </div>
             </Link>
             <div className="dashboard__profile-items spacing">
-              <FontAwesomeIcon className="font-icons" icon={faHandsPraying} />
-              <p className="dashboard__body">My Queue</p>
+              <Link className="Nav-links" to="/books">
+                <FontAwesomeIcon className="font-icons" icon={faHandsPraying} />
+                <p className="dashboard__body">My Queue</p>
+              </Link>
             </div>
             <div className="dashboard__profile-items">
-              <FontAwesomeIcon className="font-icons" icon={faBrain} />
-              <p className="dashboard__body">My Notebooks</p>
+              <Link className="Nav-links" to="/notebook">
+                <FontAwesomeIcon className="font-icons" icon={faBrain} />
+                <p className="dashboard__body">My Notebooks</p>
+              </Link>
             </div>
           </div>
           <button className="dashboard__logout" onClick={this.handleLogout}>

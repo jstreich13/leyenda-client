@@ -3,7 +3,7 @@ import { Component } from "react";
 import Input from "../../components/Input/Input";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import DreamcatcherIcon from "../../../src/visual assets/dreamcatcher-icon.png";
+import Castle from "../../../src/visual assets/cloud-castle-icon.png";
 
 class Login extends Component {
   state = {
@@ -33,13 +33,14 @@ class Login extends Component {
       <main className="login-page">
         <form className="login" onSubmit={this.handleSubmit}>
           <h1 className="login__title">Log in</h1>
-          <img
-            className="icon"
-            src={DreamcatcherIcon}
-            alt="dreamcatcher icon"
+          <img className="icon" src={Castle} alt="dreamcatcher icon" />
+          <Input className="label" type="text" name="email" label="Email" />
+          <Input
+            className="label"
+            type="password"
+            name="password"
+            label="Password"
           />
-          <Input type="text" name="email" label="Email" />
-          <Input type="password" name="password" label="Password" />
 
           <button className="login__button">Onward</button>
 
