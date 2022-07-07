@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
     // Get the data from the API
     axios
-      .get("http://localhost:8080/api/users/current", {
+      .get(`${process.env.REACT_APP_SERVER_URL}api/users/current`, {
         headers: {
           Authorization: "Bearer " + token,
         },

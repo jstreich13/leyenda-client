@@ -76,7 +76,7 @@ const NotebookPage = ({
       setNoteText("");
 
       axios
-        .post(`http://localhost:8080/save`, newNote)
+        .post(`${process.env.REACT_APP_SERVER_URL}/save`, newNote)
         .then((response) => {
           console.log(response);
         })

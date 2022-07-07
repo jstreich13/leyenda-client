@@ -39,7 +39,7 @@ const BookViewer = () => {
             autoplay=""
             name="media"
             data-video="0"
-            src="https://rr1---sn-qxo7rn7k.googlevideo.com/videoplayback?expire=1657176856&ei=uC7GYs-xE5D1hgbVh4P4AQ&ip=192.241.112.82&id=o-AJwA_9ByfLhwsyvc_DymAfexY5GHUQCbaHRfGZMeZ2RD&itag=140&source=youtube&requiressl=yes&spc=lT-Khlu4XZyniTxwF4a0LxFSTDtqdxI&vprv=1&mime=audio%2Fmp4&ns=01QSLVUufsJrJBbnIGhxysMH&gir=yes&clen=267107757&dur=16504.510&lmt=1645791401606461&keepalive=yes&fexp=24001373,24007246&c=WEB&txp=5432434&n=s0WB7HykiHxns4GX6&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAIzsjMDxxQtAWLxHLgif99h4Z15g4lV55GDDg9_9yp1qAiBCZxW4SxyoI7ywxIXlRl5QOHNS4eKSdEo9v9o1r6WjSg%3D%3D&redirect_counter=1&rm=sn-ab5eey7e&req_id=ff0a2a8c140ba3ee&cms_redirect=yes&cmsv=e&ipbypass=yes&mh=IA&mip=2601:281:cf7f:3df0:504c:d3cd:f5c4:393b&mm=31&mn=sn-qxo7rn7k&ms=au&mt=1657154268&mv=u&mvi=1&pl=50&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAMkjMQ5foz2d0zWIYh9bRbS2QNsDpSW6oMUamGi9_OK_AiEAisTmIKgDmXuLpBaVDiMlZcx8inRBOBEV72Ybe53MaQo%3D"
+            src=""
             type="audio/mp4"
           ></video>
         </div>
