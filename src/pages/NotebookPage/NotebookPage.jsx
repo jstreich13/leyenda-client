@@ -31,12 +31,6 @@ const NotebookPage = ({
     },
   ]);
 
-  // const addNote = (text) => {
-  //   const date = new Date();
-  //   const newNotes = [...notes, newNote];
-  //   setNotes(newNotes);
-  // };
-
   const [searchText, setSearchText] = useState("");
 
   const handleSearchNote = (searchItem) => {
