@@ -6,9 +6,10 @@ import gatsby from "../../visual assets/gatsby.jpeg";
 import potter from "../../visual assets/harry-potter.webp";
 import sapiens from "../../visual assets/sapiens-image.jpeg";
 
-import { current, series } from "../../GetBooksFunction.jsx/GetBooks";
+// import { current, series } from "../../GetBooksFunction.jsx/GetBooks";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PageNav from "../../components/pageNav/pageNav";
 
 const MyBooksPage = () => {
   const [books, setBooks] = useState([]);
@@ -18,15 +19,43 @@ const MyBooksPage = () => {
   const [bookId, setBookId] = useState("");
   const [queue, setQueue] = useState([]);
   const [isInQueue, setIsInQueue] = useState(false);
+  const [wasPulled, setWasPulled] = useState(false);
+
+  let series = [];
+  let current = [];
 
   useEffect(() => {
-    current?.map((book) => {
-      setBooks(book.results.books);
-    });
-    series?.map((book) => {
-      setSeries(book.results.books);
-    });
-  }, [books, current, bookSeries]);
+    axios
+      .get(
+        "https://api.nytimes.com/svc/books/v3/lists/current/combined-print-fiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+      )
+      .then((res) => {
+        let fiction = res.data.results.books;
+        axios
+          .get(
+            "https://api.nytimes.com/svc/books/v3/lists/current/combined-print-nonfiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+          )
+          .then((res) => {
+            let nonfiction = res.data.results.books;
+            setBooks([...fiction, ...nonfiction]);
+
+            setTimeout(() => {
+              axios
+                .get(
+                  "https://api.nytimes.com/svc/books/v3/lists/current/series-books.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+                )
+                .then((res) => {
+                  setSeries(res.data.results.books);
+                });
+            }, 1000);
+          });
+      });
+    console.log(current);
+  }, []);
+
+  /// IN BACKEND
+  //when you get that request, add it to a JSON file in back endand then have it check once per day
+  // fs.writeFileSync("../../BookData/fiction.json", res.data.results.books);
 
   const addToQueue = () => {
     let myQueue = {};
@@ -79,7 +108,7 @@ const MyBooksPage = () => {
   return (
     <div className="container-fluid book-app">
       <div className="row d-flex align-items-center mt-4 mb-4">
-        <div className="col">
+        <div className="col gal-title">
           <h1>My Books</h1>
         </div>
       </div>

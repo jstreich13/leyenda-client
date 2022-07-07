@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import DarkMode from "../../components/DarkMode";
 
 const NotebookPage = ({
   handleAddNote,
@@ -94,8 +95,9 @@ const NotebookPage = ({
   //on save the state changes and the note persists, note added into the array
   return (
     <>
-      <div className="header">
+      <div className="this-header">
         <h1 className="header-title">Notebook</h1>
+        {/* <DarkMode handleToggleDarkMode={setDarkMode} /> */}
         <button
           onClick={() =>
             handleToggleDarkMode((previousDarkMode) => !previousDarkMode)

@@ -21,11 +21,14 @@ code {
     monospace;
 }
 
-.header {
+.this-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: black;
+  margin: 3%;
+  border-top: 1px black solid;
+  padding: 1rem;
 }
 
 .dark-mode {
@@ -37,6 +40,10 @@ code {
 }
 
 .dark-mode .header-title {
+  color: white;
+}
+
+.dark-mode .nav-main-header {
   color: white;
 }
 

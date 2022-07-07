@@ -5,7 +5,8 @@ import Signup from "./pages/Signup/Signup";
 import { useState } from "react";
 import NotebookPage from "./pages/NotebookPage/NotebookPage";
 import MyBooksPage from "./pages/MyBooks/MyBooksPage";
-import Reader from "./components/EReader/EReader";
+import BookViewer from "./components/EReader/EReader";
+import { Provider } from "react-redux";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,9 +29,8 @@ const App = () => {
             <MyBooksPage />
           </Route>
           <Route path="/reader">
-            <Reader />
+            <BookViewer />
           </Route>
-
           <Route
             path="/notebook"
             exact
@@ -38,13 +38,7 @@ const App = () => {
               <div className={`${darkMode && "dark-mode"}`}>
                 <div className="container">
                   <NotebookPage
-                    // notes={notes.filter((note) =>
-                    //   note.text.toLowerCase().includes(searchText)
-                    // )}
                     handleToggleDarkMode={setDarkMode}
-                    // handleSearchNote={setSearchText}
-                    // handleAddNote={addNote}
-                    // handleDelete={deleteNote}
                     {...routerProps}
                   />
                 </div>
@@ -52,7 +46,6 @@ const App = () => {
             )}
           />
         </Switch>
-        {/* <Footer /> */}
       </BrowserRouter>
     </div>
   );

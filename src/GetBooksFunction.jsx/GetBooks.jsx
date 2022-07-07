@@ -16,7 +16,13 @@ export const series = [];
 
 // export const nineteenNinety = [];
 
-setTimeout(() => {
+let checked = 0;
+
+// setTimeout(() => {
+console.log("test");
+if (checked === 0) {
+  console.log("test2");
+
   axios
     .get(
       "https://api.nytimes.com/svc/books/v3/lists/current/combined-print-fiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
@@ -31,7 +37,9 @@ setTimeout(() => {
     .then((res) => {
       current.push(res.data);
     });
-}, 400);
+  let checked = 1;
+}
+// }, 400);
 
 // axios
 //   .get(
@@ -78,45 +86,36 @@ setTimeout(() => {
 //     nineteenNinety.push(res.data);
 //   });
 
-axios
-  .get(
-    "https://api.nytimes.com/svc/books/v3/lists/current/young-adult-paperback-monthly.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
-  )
-  .then((res) => {
-    current.push(res.data);
-  });
+// axios
+//   .get(
+//     "https://api.nytimes.com/svc/books/v3/lists/current/young-adult-paperback-monthly.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+//   )
+//   .then((res) => {
+//     current.push(res.data);
+//   });
 
-axios
-  .get(
-    "https://api.nytimes.com/svc/books/v3/lists/current/series-books.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
-  )
-  .then((res) => {
-    current.push(res.data);
-    series.push(res.data);
-  });
+// //business books
+// axios
+//   .get(
+//     "https://api.nytimes.com/svc/books/v3/lists/current/business-books.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+//   )
+//   .then((res) => {
+//     current.push(res.data);
+//   });
 
-//business books
-axios
-  .get(
-    "https://api.nytimes.com/svc/books/v3/lists/current/business-books.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
-  )
-  .then((res) => {
-    current.push(res.data);
-  });
+// //audio-fiction
+// axios
+//   .get(
+//     "https://api.nytimes.com/svc/books/v3/lists/current/audio-fiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+//   )
+//   .then((res) => {
+//     current.push(res.data);
+//   });
 
-//audio-fiction
-axios
-  .get(
-    "https://api.nytimes.com/svc/books/v3/lists/current/audio-fiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
-  )
-  .then((res) => {
-    current.push(res.data);
-  });
-
-axios
-  .get(
-    "https://api.nytimes.com/svc/books/v3/lists/current/audio-nonfiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
-  )
-  .then((res) => {
-    current.push(res.data);
-  });
+// axios
+//   .get(
+//     "https://api.nytimes.com/svc/books/v3/lists/current/audio-nonfiction.json?api-key=BGrpPwL1iQMZzZOUAQME3dZVLsAElx2w"
+//   )
+//   .then((res) => {
+//     current.push(res.data);
+//   });

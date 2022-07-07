@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Input from "../../components/Input/Input";
-import DreamcatcherIcon from "../../../src/visual assets/dreamcatcher-icon.png";
+import Castle from "../../visual assets/cloud-castle-icon.png";
 
 class Signup extends Component {
   state = {
@@ -35,11 +35,7 @@ class Signup extends Component {
       <main className="signup-page">
         <form className="signup" onSubmit={this.handleSubmit}>
           <h1 className="signup__title">Sign up</h1>
-          <img
-            className="icon"
-            src={DreamcatcherIcon}
-            alt="dreamcatcher icon"
-          />
+          <img className="icon" src={Castle} alt="dreamcatcher icon" />
           <Input type="text" name="first_name" label="First name" />
           <Input type="text" name="last_name" label="Last name" />
           <Input type="text" name="email" label="Email" />
