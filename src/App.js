@@ -6,7 +6,6 @@ import { useState } from "react";
 import NotebookPage from "./pages/NotebookPage/NotebookPage";
 import MyBooksPage from "./pages/MyBooks/MyBooksPage";
 import BookViewer from "./components/EReader/EReader";
-import { Provider } from "react-redux";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);

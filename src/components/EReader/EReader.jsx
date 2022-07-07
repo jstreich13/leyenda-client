@@ -1,6 +1,5 @@
 import "../../components/EReader/EReader.scss";
-import { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Component } from "react";
 import axios from "axios";
