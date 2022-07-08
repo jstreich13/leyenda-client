@@ -15,7 +15,7 @@ class Login extends Component {
     event.preventDefault();
 
     axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, {
+      .post(`${process.env.REACT_APP_SERVER_URL}api/users/login`, {
         email: event.target.email.value,
         password: event.target.password.value,
       })
