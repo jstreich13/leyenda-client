@@ -206,6 +206,7 @@ main {
     margin-left: 5rem;
     margin-right: 2rem;
     background-color: transparent !important;
+    z-index: 1;
   }
 
   @include tablet {
